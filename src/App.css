@@ -1,0 +1,109 @@
+.App {
+margin:5%;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* custom Styles*/
+* {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 300;
+  box-sizing: border-box;
+}
+.container {
+  width: 80%;
+  margin: 0 auto;
+  min-width: 767px;
+}
+.filterGrid {
+  border: 1px solid #333;
+  display: table;
+  margin: 25px 0 25px 10px;
+}
+.search h2{
+  color: #3e99dd;
+  margin-left: 10px;
+  font-weight: 300;
+}
+label {
+  font-weight: 700;
+  font-size: 13px;
+}
+label, select, input {
+  display: block;
+  width: 100%;
+  margin:  5px  5px  5px  0;
+}
+button {
+  margin: 0 0 0 10px;
+}
+.text-right {
+  text-align: right;
+}
+.gridBlock {
+  display: inline-block;  
+  padding: 10px;
+}
+.w_10 {
+  width: 10%;
+}
+.w_20 {
+  width: 20%;
+}
+.w_25 {
+  width: 25%;
+}
+.w_50 {
+  width: 50%;
+}
+.w_100 {
+  width: 100%;
+}
+.closeBtn {
+  display: inline-block;
+  margin: 10px 10px 10px 0;
+  text-decoration: none;
+  background: transparent;
+  border: none;
+  width: 21px;
+  height: 21px;
+  position: relative;
+}
+.closeBtn:before {
+  padding: 2px 6px;
+  content: 'x';
+  color: #ff0000;
+  font-weight: 700;
+  font-family: Arial, sans-serif;
+  border-radius: 50%;
+  border: 1px solid red;
+  text-align: center;
+  vertical-align: middle;
+  position: absolute;
+  top:0;
+  right: 0;
+  cursor: pointer;    
+}
