@@ -1,4 +1,4 @@
-import {SET_DEFAULT_FILTER, SET_FILTER, GET_FILTER, REM_FILTER} from '../actionTypes';
+import {SET_DEFAULT_FILTER, ADD_SEARCH_CRITERIA, SET_FILTER, GET_FILTER, REM_FILTER} from '../actionTypes';
 
 export default (state, action)=>{
     let newFilter={
@@ -30,6 +30,10 @@ export default (state, action)=>{
             newFilter = action.filter;
             console.log("reducer");
             return {ABCD:newFilter};
+        case ADD_SEARCH_CRITERIA:
+            console.log("action.filter==>", action.filter);
+            newFilter.searchCriteria.push(action.filter);
+            return newFilter;
         default :
             return state;
 

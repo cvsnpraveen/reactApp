@@ -5,7 +5,7 @@ import FilterComponent from "./FilterComponent";
 import FilterItemComponent from "./FilterItemComponent";
 import SearchComponent from "./SearchComponent";
 import { connect } from 'react-redux';
-import { setDefaultFilter } from "./actions/simpleAction";
+import { setDefaultFilter, addSearchCriteria } from "./actions/simpleAction";
 
 
 export class App extends Component {
@@ -136,6 +136,9 @@ export class App extends Component {
         }
         this.props.setDefaultFilter(data);
     }
+    addSearchCriteria=(abc)=>{
+        this.props.addSearchCriteria(abc);
+    }
 
     componentDidMount() {
         console.log("Step1");
@@ -151,7 +154,7 @@ export class App extends Component {
     return (
       <div className="container App search">
         <h2>Search Pricing Rule</h2>
-        <FilterComponent addSearchCriteria = {this.addSearchCriteria} data = {filters} default = {filters[0]}/>
+        <FilterComponent addSearchCriteria = {this.addSearchCriteria} data = {this.props.data} default = {filters[0]}/>
         {searchCriteria.map((item, index)=> <FilterItemComponent key= {index} item = {item}/>)}
 
         {/*Default Filter*/}
@@ -172,6 +175,10 @@ const mapDispatchToProps = (dispatch)=>({
     setDefaultFilter(data){
         console.log("Step3", data);        
         dispatch(setDefaultFilter(data))
+    },
+    addSearchCriteria(data){
+        console.log("Step3", data);        
+        dispatch(addSearchCriteria(data))
     }
 }) 
 
